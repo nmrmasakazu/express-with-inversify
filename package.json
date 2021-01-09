@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "ts-node src/app.ts",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "jest": {
     "moduleNameMapper": {
@@ -31,6 +31,7 @@
     "reflect-metadata": "^0.1.13",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
+    "typemoq": "^2.1.0",
     "typescript": "^4.1.3"
   },
   "dependencies": {
