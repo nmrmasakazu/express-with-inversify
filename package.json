@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "inversify": "^5.0.5",
+    "reflect-metadata": "^0.1.13"
+  }
+}
