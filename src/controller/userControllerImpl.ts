@@ -4,7 +4,9 @@ import TYPES from '../constant/types'
 import { UserController } from './userController'
 import { UserService } from '../service/userService'
 
-@injectable()
+import { controller, httpGet } from "inversify-express-utils";
+
+@controller("/")
 class UserControllerImpl implements UserController {
 
     private readonly userService: UserService;
@@ -15,6 +17,7 @@ class UserControllerImpl implements UserController {
         this.userService = userService;
     }
 
+    @httpGet('/')
     whoami(name: string): User {
         return this.userService.whoami(name);
     }

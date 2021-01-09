@@ -1,22 +1,19 @@
-import express from 'express';
-import { Request, Response } from 'express';
 import 'reflect-metadata';
-
+import { InversifyExpressServer } from 'inversify-express-utils';
 import { container } from './inversify.config';
-import { UserController } from './controller/userController';
-import TYPES from './constant/types';
+import * as bodyParser from 'body-parser';
 
-const userController = container.get<UserController>(TYPES.UserController);
+let server = new InversifyExpressServer(container);
 
-const app = express();
-
-app.get('/', (req: Request, res: Response) => {
-    const user = userController.whoami('')
-    res.status(200).json(user);
+server.setConfig((app) => {
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+  app.use(bodyParser.json());
 });
 
+let app = server.build();
 const port = 3000;
 app.listen(port, () => {
     console.log(`listening on port ${port}...`)
-}
-);
+});
