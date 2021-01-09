@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "ts-node src/app.ts",
+    "dev": "nodemon",
     "build": "tsc --project ./src/tsconfig.json",
     "start": "node dist/app.js",
     "test": "jest --coverage"
@@ -31,6 +31,7 @@
     "inversify": "^5.0.5",
     "inversify-express-utils": "^6.3.2",
     "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
     "reflect-metadata": "^0.1.13",
     "ts-jest": "^26.4.4",
     "ts-node": "^9.1.1",
