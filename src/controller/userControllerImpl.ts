@@ -7,7 +7,7 @@ import { UserService } from '../service/userService'
 @injectable()
 class UserControllerImpl implements UserController {
 
-    private userService: UserService;
+    private readonly userService: UserService;
 
     public constructor(
 	    @inject(TYPES.UserService) userService: UserService,

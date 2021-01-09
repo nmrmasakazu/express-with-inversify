@@ -7,7 +7,7 @@ import { UserRepository } from '../repository/userRepository'
 @injectable()
 class UserServiceImpl implements UserService {
 
-    private userRepository: UserRepository;
+    private readonly userRepository: UserRepository;
 
     public constructor(
 	    @inject(TYPES.UserRepository) userRepository: UserRepository,
