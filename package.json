@@ -1,6 +1,8 @@
 {
   "scripts": {
     "dev": "ts-node src/app.ts",
+    "build": "tsc --project ./src/tsconfig.json",
+    "start": "node dist/app.js",
     "test": "jest --coverage"
   },
   "jest": {

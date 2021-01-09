@@ -2,7 +2,10 @@
 
 ```bash
 yarn install
+# 実行
 yarn dev
+# ビルド
+yarn build && yarn start
 ```
 
 References
