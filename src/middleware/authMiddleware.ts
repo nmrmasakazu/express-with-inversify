@@ -8,7 +8,7 @@ const authMiddlewareFactory = (container: Container) => {
     return (config: { role: roleType }) => {
         return (req: express.Request, res: express.Response, next: express.NextFunction) => {
             console.log(req.cookies);
-            const dummyRole = 'admins'
+            const dummyRole = 'admin'
             if (dummyRole === config.role) {
                 console.log(`Passing Middleware. Role is ${config.role}`);
             }
