@@ -8,6 +8,8 @@ function authMiddlewareFactory(container: Container) {
             console.log(req.cookies);
             console.log(`Passing Middleware. Role is ${config.role}`);
             next();
+            // res.status(403).end("Forbidden");
+            // res.status(401).end("Unauthorized");
         };
     };
 }
