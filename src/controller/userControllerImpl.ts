@@ -5,6 +5,7 @@ import { UserController } from './userController'
 import { UserService } from '../service/userService'
 
 import { controller, httpGet } from "inversify-express-utils";
+import { authMiddleware } from '../middleware/authMiddleware';
 
 @controller("/")
 class UserControllerImpl implements UserController {
@@ -17,7 +18,7 @@ class UserControllerImpl implements UserController {
         this.userService = userService;
     }
 
-    @httpGet('/')
+    @httpGet('/', authMiddleware({ role: "admin" }))
     whoami(name: string): User {
         return this.userService.whoami(name);
     }
